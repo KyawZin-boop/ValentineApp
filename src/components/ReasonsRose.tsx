@@ -1,9 +1,11 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useMemo } from "react";
+import { RotateCcw } from "lucide-react";
 
 const ReasonsRose = () => {
   const [revealedPetals, setRevealedPetals] = useState<number[]>([]);
   const [currentReason, setCurrentReason] = useState<string | null>(null);
+  const [resetKey, setResetKey] = useState(0);
 
   const reasons = [
     "Your beautiful smile",
@@ -35,6 +37,12 @@ const ReasonsRose = () => {
     }
   };
 
+  const handleReset = () => {
+    setRevealedPetals([]);
+    setCurrentReason(null);
+    setResetKey(prev => prev + 1);
+  };
+
   const petalPositions = [
     { rotate: 0 },
     { rotate: 45 },
@@ -57,7 +65,7 @@ const ReasonsRose = () => {
           
           return (
             <div
-              key={index}
+              key={`${index}-${resetKey}`}
               className="absolute left-1/2 top-1/2"
               style={{
                 transform: `translate(-50%, -50%) rotate(${pos.rotate}deg)`,
@@ -139,6 +147,28 @@ const ReasonsRose = () => {
       <p className="text-xs text-muted-foreground/60">
         ({revealedPetals.length}/8 petals)
       </p>
+
+      {/* Reset button - appears when all petals are revealed */}
+      <AnimatePresence>
+        {revealedPetals.length === 8 && (
+          <motion.button
+            onClick={handleReset}
+            className="mt-3 px-4 py-2 rounded-full flex items-center gap-2 text-sm font-serif text-white"
+            style={{
+              background: "linear-gradient(135deg, hsl(var(--romantic-red)) 0%, hsl(var(--soft-pink)) 100%)",
+              boxShadow: "0 4px 15px hsl(var(--romantic-red) / 0.4)",
+            }}
+            initial={{ opacity: 0, scale: 0.8, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 10 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <RotateCcw className="w-4 h-4" />
+            Bloom Again
+          </motion.button>
+        )}
+      </AnimatePresence>
 
       {/* Floating reason display */}
       <AnimatePresence>
