@@ -16,18 +16,17 @@ const MessageBottle = () => {
   };
 
   return (
-    <div className="relative flex flex-col items-center">
-      {/* Confetti explosion */}
+    <div className="relative flex flex-col items-center w-full max-w-md mx-auto">{/* Confetti explosion */}
       <AnimatePresence>
         {showConfetti && (
-          <motion.div className="fixed inset-0 pointer-events-none z-50">
+          <motion.div className="absolute inset-0 pointer-events-none overflow-hidden">
             {Array.from({ length: 50 }).map((_, i) => (
               <motion.div
                 key={i}
                 className="absolute"
                 style={{
                   left: "50%",
-                  top: "50%",
+                  top: "30%",
                   width: 8 + Math.random() * 8,
                   height: 8 + Math.random() * 8,
                   borderRadius: Math.random() > 0.5 ? "50%" : "2px",
@@ -41,8 +40,8 @@ const MessageBottle = () => {
                 initial={{ scale: 0, x: 0, y: 0 }}
                 animate={{
                   scale: [0, 1, 1],
-                  x: (Math.random() - 0.5) * 500,
-                  y: (Math.random() - 0.5) * 500,
+                  x: (Math.random() - 0.5) * 300,
+                  y: (Math.random() - 0.5) * 300,
                   rotate: Math.random() * 720,
                   opacity: [0, 1, 0],
                 }}
@@ -115,36 +114,24 @@ const MessageBottle = () => {
         </svg>
       </motion.button>
 
-      <p className="mt-3 text-center text-sm text-muted-foreground font-script">
-        Message in a Bottle
-      </p>
-
       {/* Secret message reveal */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-4 md:inset-auto md:fixed md:top-1/2 md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 z-50 flex items-center justify-center"
+            className="mt-8 w-full"
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0 }}
           >
             <motion.div
-              className="relative max-w-md w-full p-6 md:p-8 rounded-lg"
+              className="relative w-full p-6 md:p-8 rounded-lg"
               style={{
                 background: "linear-gradient(180deg, hsl(35 60% 92%) 0%, hsl(35 50% 85%) 100%)",
-                boxShadow: "0 25px 80px hsl(var(--deep-purple) / 0.5)",
+                boxShadow: "0 15px 40px hsl(var(--deep-purple) / 0.3)",
               }}
               initial={{ rotate: -5 }}
               animate={{ rotate: 0 }}
             >
-              {/* Close button */}
-              <button
-                onClick={() => setIsOpen(false)}
-                className="absolute top-2 right-3 text-deep-purple/50 hover:text-deep-purple text-2xl"
-              >
-                ×
-              </button>
-
               {/* Decorative seal */}
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-romantic-red flex items-center justify-center">
                 <span className="text-white text-sm">♥</span>
