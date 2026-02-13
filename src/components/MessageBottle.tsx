@@ -138,10 +138,10 @@ const MessageBottle = () => {
               </div>
 
               <div className="pt-4">
-                <h4 className="font-script text-2xl text-deep-purple text-center mb-4">
+                <h4 className="font-script text-2xl text-foreground text-center mb-4">
                   A Secret Just for You
                 </h4>
-                <p className="font-serif text-lg text-deep-purple/90 leading-relaxed text-center italic">
+                <p className="font-serif text-lg text-foreground/90 leading-relaxed text-center italic">
                   "{secretMessage}"
                 </p>
               </div>

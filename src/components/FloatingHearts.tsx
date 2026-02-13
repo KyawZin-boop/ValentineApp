@@ -27,11 +27,12 @@ const FloatingHearts = () => {
       {hearts.map((heart) => (
         <motion.div
           key={heart.id}
-          className="absolute text-soft-pink"
+          className="absolute"
           style={{
             left: `${heart.x}%`,
             fontSize: heart.size,
             opacity: heart.opacity,
+            color: 'hsl(340, 80%, 75%)',
           }}
           initial={{ y: "110vh", rotate: 0 }}
           animate={{

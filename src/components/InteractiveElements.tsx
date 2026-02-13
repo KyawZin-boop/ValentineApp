@@ -59,12 +59,11 @@ const InteractiveElements = () => {
           >
             <motion.button
               onClick={() => setOpenDialog("photos")}
-              className="w-full rounded-2xl p-6 cursor-pointer group"
+              className="w-full rounded-2xl p-6 cursor-pointer group bg-white/80 border-2 border-romantic-red/30"
               style={{
-                background: "linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%)",
-                boxShadow: "0 10px 40px hsl(var(--deep-purple) / 0.3)",
+                boxShadow: "0 10px 40px hsl(var(--romantic-red) / 0.15)",
               }}
-              whileHover={{ scale: 1.05, boxShadow: "0 15px 50px hsl(var(--romantic-red) / 0.4)" }}
+              whileHover={{ scale: 1.05, boxShadow: "0 15px 50px hsl(var(--romantic-red) / 0.3)" }}
               whileTap={{ scale: 0.98 }}
             >
               <div className="flex flex-col items-center gap-4">
@@ -77,8 +76,8 @@ const InteractiveElements = () => {
                   <Camera className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-center">
-                  <h3 className="font-script text-xl text-accent mb-1">Our Memories</h3>
-                  <p className="text-xs text-muted-foreground font-serif">Photo Gallery</p>
+                  <h3 className="font-script text-xl text-romantic-red mb-1">Our Memories</h3>
+                  <p className="text-xs text-foreground/60 font-serif">Photo Gallery</p>
                 </div>
               </div>
             </motion.button>
@@ -93,12 +92,11 @@ const InteractiveElements = () => {
           >
             <motion.button
               onClick={() => setOpenDialog("rose")}
-              className="w-full rounded-2xl p-6 cursor-pointer group"
+              className="w-full rounded-2xl p-6 cursor-pointer group bg-white/80 border-2 border-romantic-red/30"
               style={{
-                background: "linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%)",
-                boxShadow: "0 10px 40px hsl(var(--deep-purple) / 0.3)",
+                boxShadow: "0 10px 40px hsl(var(--romantic-red) / 0.15)",
               }}
-              whileHover={{ scale: 1.05, boxShadow: "0 15px 50px hsl(var(--romantic-red) / 0.4)" }}
+              whileHover={{ scale: 1.05, boxShadow: "0 15px 50px hsl(var(--romantic-red) / 0.3)" }}
               whileTap={{ scale: 0.98 }}
             >
               <div className="flex flex-col items-center gap-4">
@@ -111,8 +109,8 @@ const InteractiveElements = () => {
                   <Flower className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-center">
-                  <h3 className="font-script text-xl text-accent mb-1">Why I Love You</h3>
-                  <p className="text-xs text-muted-foreground font-serif">Reasons Rose</p>
+                  <h3 className="font-script text-xl text-romantic-red mb-1">Why I Love You</h3>
+                  <p className="text-xs text-foreground/60 font-serif">Reasons Rose</p>
                 </div>
               </div>
             </motion.button>
@@ -127,12 +125,11 @@ const InteractiveElements = () => {
           >
             <motion.button
               onClick={() => setOpenDialog("message")}
-              className="w-full rounded-2xl p-6 cursor-pointer group"
+              className="w-full rounded-2xl p-6 cursor-pointer group bg-white/80 border-2 border-romantic-red/30"
               style={{
-                background: "linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%)",
-                boxShadow: "0 10px 40px hsl(var(--deep-purple) / 0.3)",
+                boxShadow: "0 10px 40px hsl(var(--romantic-red) / 0.15)",
               }}
-              whileHover={{ scale: 1.05, boxShadow: "0 15px 50px hsl(var(--romantic-red) / 0.4)" }}
+              whileHover={{ scale: 1.05, boxShadow: "0 15px 50px hsl(var(--romantic-red) / 0.3)" }}
               whileTap={{ scale: 0.98 }}
             >
               <div className="flex flex-col items-center gap-4">
@@ -145,8 +142,8 @@ const InteractiveElements = () => {
                   <Mail className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-center">
-                  <h3 className="font-script text-xl text-accent mb-1">Sweet Messages</h3>
-                  <p className="text-xs text-muted-foreground font-serif">Message Bottle</p>
+                  <h3 className="font-script text-xl text-romantic-red mb-1">Sweet Messages</h3>
+                  <p className="text-xs text-foreground/60 font-serif">Message Bottle</p>
                 </div>
               </div>
             </motion.button>

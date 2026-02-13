@@ -105,7 +105,7 @@ const LoveLetter = ({ onComplete }: LovelLetterProps) => {
                     className={
                       paragraph.isTitle
                         ? "font-script text-3xl md:text-5xl text-romantic-red mb-4"
-                        : "font-serif text-base md:text-lg text-deep-purple/90 leading-relaxed indent-8 first-letter:text-3xl first-letter:font-script first-letter:text-romantic-red first-letter:mr-1"
+                        : "font-serif text-base md:text-lg text-foreground leading-relaxed indent-8 first-letter:text-3xl first-letter:font-script first-letter:text-romantic-red first-letter:mr-1"
                     }
                   />
                 )}

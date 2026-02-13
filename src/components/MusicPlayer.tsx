@@ -24,7 +24,7 @@ const MusicPlayer = () => {
       artist: "John Legend",
       url: allOfMe
     },
-     { 
+    { 
       title: "Perfect", 
       artist: "Ed Sheeran",
       url: perfect

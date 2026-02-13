@@ -60,10 +60,10 @@ const PasscodePage = ({ onSuccess }: PasscodePageProps) => {
           >
             <span className="text-6xl">💝</span>
           </motion.div>
-          <h1 className="font-script text-4xl md:text-5xl text-rose-gold mb-2">
+          <h1 className="font-script text-4xl md:text-5xl text-romantic-red mb-2">
             Enter Passcode
           </h1>
-          <p className="text-muted-foreground font-serif">
+          <p className="text-foreground/70 font-serif">
             Unlock something special
           </p>
         </div>
@@ -80,9 +80,9 @@ const PasscodePage = ({ onSuccess }: PasscodePageProps) => {
               className={`w-14 h-14 rounded-lg flex items-center justify-center text-2xl font-bold transition-all ${
                 passcode.length > i
                   ? error
-                    ? "bg-destructive/20 border-2 border-destructive"
-                    : "bg-rose-gold/20 border-2 border-rose-gold"
-                  : "bg-card/50 border-2 border-border"
+                    ? "bg-destructive/20 border-2 border-destructive text-destructive"
+                    : "bg-rose-gold/30 border-2 border-rose-gold text-romantic-red"
+                  : "bg-white/80 border-2 border-romantic-red/30 text-foreground"
               }`}
             >
               {passcode.length > i ? "●" : ""}
@@ -106,7 +106,7 @@ const PasscodePage = ({ onSuccess }: PasscodePageProps) => {
             <Button
               key={num}
               onClick={() => handleInput(num.toString())}
-              className="h-16 text-xl font-bold bg-card hover:bg-rose-gold/20 border-2 border-border hover:border-rose-gold transition-all"
+              className="h-16 text-xl font-bold bg-white/80 hover:bg-rose-gold/30 border-2 border-romantic-red/30 hover:border-rose-gold transition-all text-foreground"
               disabled={passcode.length === 4}
             >
               {num}
@@ -117,20 +117,20 @@ const PasscodePage = ({ onSuccess }: PasscodePageProps) => {
         <div className="grid grid-cols-3 gap-3">
           <Button
             onClick={handleClear}
-            className="h-16 bg-card hover:bg-destructive/20 border-2 border-border hover:border-destructive transition-all"
+            className="h-16 bg-white/80 hover:bg-destructive/20 border-2 border-romantic-red/30 hover:border-destructive transition-all text-foreground"
           >
             Clear
           </Button>
           <Button
             onClick={() => handleInput("0")}
-            className="h-16 text-xl font-bold bg-card hover:bg-rose-gold/20 border-2 border-border hover:border-rose-gold transition-all"
+            className="h-16 text-xl font-bold bg-white/80 hover:bg-rose-gold/30 border-2 border-romantic-red/30 hover:border-rose-gold transition-all text-foreground"
             disabled={passcode.length === 4}
           >
             0
           </Button>
           <Button
             onClick={handleDelete}
-            className="h-16 bg-card hover:bg-muted border-2 border-border hover:border-muted-foreground transition-all"
+            className="h-16 bg-white/80 hover:bg-muted border-2 border-romantic-red/30 hover:border-muted-foreground transition-all text-foreground"
           >
             ←
           </Button>
@@ -142,7 +142,7 @@ const PasscodePage = ({ onSuccess }: PasscodePageProps) => {
           transition={{ delay: 1 }}
           className="mt-8 text-center"
         >
-          <p className="text-sm text-muted-foreground font-serif italic">
+          <p className="text-sm text-foreground/60 font-serif italic">
             Hint: A special date... ♥
           </p>
         </motion.div>
