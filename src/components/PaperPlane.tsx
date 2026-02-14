@@ -7,27 +7,19 @@ interface PaperPlaneProps {
 
 const PaperPlane = ({ onComplete }: PaperPlaneProps) => {
   const [isFlying, setIsFlying] = useState(false);
-  const [showCursor, setShowCursor] = useState(true);
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
   const handleClick = () => {
     if (!isFlying) {
       setIsFlying(true);
-      setShowCursor(false);
       setTimeout(() => {
         onComplete();
       }, 2500);
     }
   };
 
-  const handleMouseMove = (e: React.MouseEvent) => {
-    setCursorPosition({ x: e.clientX, y: e.clientY });
-  };
-
   return (
     <div 
       className="fixed inset-0 flex items-center justify-center z-10"
-      onMouseMove={handleMouseMove}
     >
       {/* Custom Cursor */}
       {/* {showCursor && (
