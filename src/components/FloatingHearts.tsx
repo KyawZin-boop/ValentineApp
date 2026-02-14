@@ -12,12 +12,12 @@ interface Heart {
 
 const FloatingHearts = () => {
   const hearts = useMemo<Heart[]>(() => {
-    return Array.from({ length: 25 }, (_, i) => ({
+    return Array.from({ length: 50 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       delay: Math.random() * 10,
       duration: 8 + Math.random() * 12,
-      size: 10 + Math.random() * 20,
+      size: 15 + Math.random() * 20,
       opacity: 0.1 + Math.random() * 0.3,
     }));
   }, []);

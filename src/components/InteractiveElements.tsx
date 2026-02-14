@@ -16,15 +16,15 @@ const InteractiveElements = () => {
       <div className="max-w-4xl mx-auto">
         {/* Title */}
         <motion.h2
-          className="text-center font-script text-4xl md:text-5xl text-accent mb-4"
+          className="text-center font-script text-4xl md:text-5xl text-romantic-red mb-4"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          More Love For You
+          More Love For You Baby
         </motion.h2>
         <motion.p
-          className="text-center text-muted-foreground font-serif mb-12"
+          className="text-center text-soft-pink font-serif mb-12"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
@@ -92,10 +92,10 @@ const InteractiveElements = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 2 }}
         >
-          <p className="font-script text-2xl text-soft-pink mb-2">
+          <p className="font-script text-2xl text-romantic-red mb-2">
             Happy Valentine's Day, My Love
           </p>
-          <p className="text-muted-foreground font-serif">
+          <p className="text-soft-pink font-serif">
             With all my heart, now and forever ♥
           </p>
         </motion.div>

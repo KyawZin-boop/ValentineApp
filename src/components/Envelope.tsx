@@ -83,7 +83,7 @@ const Envelope = ({ onOpen }: EnvelopeProps) => {
                 className="text-center"
               >
                 <div className="font-script text-4xl md:text-5xl mb-3" style={{ color: "#D4405C" }}>
-                  For You
+                  For Ei
                 </div>
                 <div className="text-3xl mb-2" style={{ color: "#D4405C" }}>♥</div>
                 <p className="font-serif text-sm italic" style={{ color: "#8B7355" }}>

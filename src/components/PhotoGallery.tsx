@@ -1,6 +1,11 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, X, Heart } from "lucide-react";
+import photo1 from "@/assets/55444_0.jpg";
+import photo2 from "@/assets/55443_0.jpg";
+import photo3 from "@/assets/55440_0.jpg";
+import photo4 from "@/assets/55441_0.jpg";
+import photo5 from "@/assets/55445_0.jpg";
 
 const PhotoGallery = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,11 +13,11 @@ const PhotoGallery = () => {
 
   // Placeholder memories - these would be replaced with real photos
   const memories = [
-    { id: 1, caption: "Our first date", color: "hsl(340 60% 70%)" },
-    { id: 2, caption: "That perfect sunset", color: "hsl(30 70% 70%)" },
-    { id: 3, caption: "Adventures together", color: "hsl(200 60% 70%)" },
-    { id: 4, caption: "Lazy Sundays", color: "hsl(270 50% 70%)" },
-    { id: 5, caption: "Our special place", color: "hsl(150 50% 70%)" },
+    { id: 1, caption: "Our reunion", photo: photo1 },
+    { id: 2, caption: "My soft kiss", photo: photo2 },
+    { id: 3, caption: "The heart u give me", photo: photo3 },
+    { id: 4, caption: "The smile on your face", photo: photo4 },
+    { id: 5, caption: "One of my favourite pictures", photo: photo5 },
   ];
 
   const nextPhoto = () => {
@@ -43,7 +48,7 @@ const PhotoGallery = () => {
         >
           <Heart className="w-10 h-10 text-white fill-white" />
         </motion.div>
-        <p className="mt-3 text-center text-sm text-muted-foreground font-script">
+        <p className="mt-3 text-center text-sm text-soft-pink font-script">
           Our Memories
         </p>
       </motion.button>
@@ -59,7 +64,7 @@ const PhotoGallery = () => {
           >
             {/* Backdrop */}
             <motion.div
-              className="absolute inset-0 bg-background/90 backdrop-blur-md"
+              className="absolute inset-0 bg-background/80 backdrop-blur-sm"
               onClick={() => setIsOpen(false)}
             />
 
@@ -83,22 +88,17 @@ const PhotoGallery = () => {
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={currentIndex}
-                    className="absolute inset-0 flex items-center justify-center"
-                    style={{ backgroundColor: memories[currentIndex].color }}
+                    className="absolute inset-0"
                     initial={{ opacity: 0, x: 100 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -100 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="text-center p-8">
-                      <Heart className="w-16 h-16 mx-auto mb-4 text-white/50" />
-                      <p className="text-white font-script text-2xl">
-                        {memories[currentIndex].caption}
-                      </p>
-                      <p className="text-white/70 text-sm mt-2">
-                        Add your photo here
-                      </p>
-                    </div>
+                    <img
+                      src={memories[currentIndex].photo}
+                      alt={memories[currentIndex].caption}
+                      className="w-full h-full object-cover"
+                    />
                   </motion.div>
                 </AnimatePresence>
 
@@ -133,7 +133,7 @@ const PhotoGallery = () => {
                     onClick={() => setCurrentIndex(index)}
                     className={`w-2 h-2 rounded-full transition-all ${
                       index === currentIndex
-                        ? "bg-accent w-6"
+                        ? "bg-soft-pink w-6"
                         : "bg-foreground/30 hover:bg-foreground/50"
                     }`}
                   />
@@ -143,7 +143,7 @@ const PhotoGallery = () => {
               {/* Caption */}
               <motion.p
                 key={currentIndex}
-                className="text-center mt-4 font-script text-xl text-accent"
+                className="text-center mt-4 font-script text-xl text-soft-pink"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
               >

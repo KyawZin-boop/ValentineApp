@@ -195,7 +195,7 @@ const MusicPlayer = () => {
       <div 
         className="rounded-2xl p-4"
         style={{
-          background: "linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%)",
+          background: "linear-gradient(135deg, hsl(var(--soft-pink)) 0%, hsl(var(--muted)) 100%)",
           boxShadow: "0 10px 40px hsl(var(--deep-purple) / 0.4)",
         }}
       >
@@ -284,7 +284,7 @@ const MusicPlayer = () => {
         </div>
 
         {/* Note about audio */}
-        <p className="text-xs text-center text-muted-foreground/60 mt-3 font-serif italic">
+        <p className="text-xs text-center text-soft-pink mt-3 font-serif italic">
           Every song, a feeling I have for you ♥
         </p>
       </div>

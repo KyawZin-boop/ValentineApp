@@ -10,8 +10,8 @@ const ReasonsRose = () => {
   const reasons = [
     "Your beautiful smile",
     "Your kind heart",
-    "The way you laugh",
-    "Your endless patience",
+    "Your natural scent",
+    "Your soft lips",
     "Your warm hugs",
     "Your adventurous spirit",
     "How you believe in me",
@@ -139,12 +139,12 @@ const ReasonsRose = () => {
       />
 
       {/* Label */}
-      <p className="mt-4 text-center text-sm text-muted-foreground font-script">
+      <p className="mt-4 text-center text-sm text-soft-pink font-script">
         {revealedPetals.length === 8 
           ? "She loves me! ♥" 
           : "Reasons I Love You"}
       </p>
-      <p className="text-xs text-muted-foreground/60">
+      <p className="text-xs text-romantic-red/60">
         ({revealedPetals.length}/8 petals)
       </p>
 

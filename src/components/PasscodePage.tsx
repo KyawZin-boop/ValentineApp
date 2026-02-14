@@ -60,10 +60,10 @@ const PasscodePage = ({ onSuccess }: PasscodePageProps) => {
           >
             <span className="text-6xl">💝</span>
           </motion.div>
-          <h1 className="font-script text-4xl md:text-5xl text-rose-gold mb-2">
+          <h1 className="font-script text-4xl md:text-5xl text-romantic-red mb-2">
             Enter Passcode
           </h1>
-          <p className="text-muted-foreground font-serif">
+          <p className="text-soft-pink font-serif">
             Unlock something special
           </p>
         </div>
@@ -77,12 +77,12 @@ const PasscodePage = ({ onSuccess }: PasscodePageProps) => {
           {[0, 1, 2, 3].map((i) => (
             <div
               key={i}
-              className={`w-14 h-14 rounded-lg flex items-center justify-center text-2xl font-bold transition-all ${
+              className={`w-14 h-14 rounded-lg flex items-center justify-center text-2xl font-bold transition-all text-soft-pink ${
                 passcode.length > i
                   ? error
                     ? "bg-destructive/20 border-2 border-destructive"
-                    : "bg-rose-gold/20 border-2 border-rose-gold"
-                  : "bg-card/50 border-2 border-border"
+                    : "bg-soft-pink/20 border-2 border-soft-pink"
+                  : "bg-transparent border-2 border-soft-pink"
               }`}
             >
               {passcode.length > i ? "●" : ""}
@@ -106,7 +106,7 @@ const PasscodePage = ({ onSuccess }: PasscodePageProps) => {
             <Button
               key={num}
               onClick={() => handleInput(num.toString())}
-              className="h-16 text-xl font-bold bg-card hover:bg-rose-gold/20 border-2 border-border hover:border-rose-gold transition-all"
+              className="h-16 text-xl font-bold bg-love hover:bg-soft-pink/20 border-2 border-soft-pink hover:border-soft-pink transition-all text-soft-pink"
               disabled={passcode.length === 4}
             >
               {num}
@@ -117,20 +117,20 @@ const PasscodePage = ({ onSuccess }: PasscodePageProps) => {
         <div className="grid grid-cols-3 gap-3">
           <Button
             onClick={handleClear}
-            className="h-16 bg-card hover:bg-destructive/20 border-2 border-border hover:border-destructive transition-all"
+            className="h-16 bg-love hover:bg-destructive/20 border-2 border-soft-pink hover:border-destructive transition-all text-soft-pink text-md"
           >
             Clear
           </Button>
           <Button
             onClick={() => handleInput("0")}
-            className="h-16 text-xl font-bold bg-card hover:bg-rose-gold/20 border-2 border-border hover:border-rose-gold transition-all"
+            className="h-16 text-xl font-bold bg-love hover:bg-soft-pink/20 border-2 border-soft-pink hover:border-soft-pink transition-all text-soft-pink"
             disabled={passcode.length === 4}
           >
             0
           </Button>
           <Button
             onClick={handleDelete}
-            className="h-16 bg-card hover:bg-muted border-2 border-border hover:border-muted-foreground transition-all"
+            className="h-16 bg-love hover:bg-soft-pink/20 border-2 border-soft-pink hover:border-soft-pink transition-all text-soft-pink text-md"
           >
             ←
           </Button>
@@ -142,7 +142,7 @@ const PasscodePage = ({ onSuccess }: PasscodePageProps) => {
           transition={{ delay: 1 }}
           className="mt-8 text-center"
         >
-          <p className="text-sm text-muted-foreground font-serif italic">
+          <p className="text-sm text-soft-pink font-serif italic">
             Hint: A special date... ♥
           </p>
         </motion.div>

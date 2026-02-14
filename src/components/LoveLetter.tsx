@@ -12,11 +12,11 @@ const LoveLetter = ({ onComplete }: LovelLetterProps) => {
   const [allComplete, setAllComplete] = useState(false);
 
   const letterContent = [
-    { text: "My Dearest Love,", isTitle: true },
+    { text: "My Dearest Ei,", isTitle: true },
     { text: "From the moment our paths crossed, my heart knew it had found its home. Every day with you feels like a beautiful dream I never want to wake from.", isTitle: false },
-    // { text: "I remember the first time I saw your smile — time stood still, and in that moment, I knew my life would never be the same. You are the melody to my song, the warmth to my cold days, and the reason my heart beats with such joy.", isTitle: false },
-    // { text: "Thank you for being you. For your kindness, your laughter, your patience, and for loving me in ways I never knew possible. You make every ordinary moment feel extraordinary.", isTitle: false },
-    // { text: "On this Valentine's Day and every day after, I promise to cherish you, to stand by you, and to love you with all that I am.", isTitle: false },
+    // { text: "I remember every laugh we shared, every conversation that lasted until we lost track of time, every moment when you looked at me and made me feel like the luckiest person alive. All those times we spent together, just being ourselves, have become the most precious memories in my heart.", isTitle: false },
+    { text: "Thank you for being you. For your kindness, your laughter, your patience, and for loving me in ways I never knew possible. You make every ordinary moment feel extraordinary.", isTitle: false },
+    { text: "On this Valentine's Day and every day after, I promise to cherish you, to stand by you, and to love you with all that I am.", isTitle: false },
     { text: "Forever & Always Yours ♥", isTitle: true },
   ];
 
@@ -41,7 +41,7 @@ const LoveLetter = ({ onComplete }: LovelLetterProps) => {
       transition={{ duration: 1 }}
     >
       <motion.div
-        className="relative max-w-3xl w-full my-8"
+        className="relative max-w-3xl w-full my-8 pt-12"
         initial={{ scale: 0.8, y: 50 }}
         animate={{ scale: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 100, damping: 20 }}
@@ -100,12 +100,12 @@ const LoveLetter = ({ onComplete }: LovelLetterProps) => {
                 {index <= visibleParagraphs && (
                   <TypewriterText
                     text={paragraph.text}
-                    delay={index === 0 ? 800 : 200}
+                    delay={index === 0 ? 800 : 50}
                     onComplete={() => handleParagraphComplete(index)}
                     className={
                       paragraph.isTitle
                         ? "font-script text-3xl md:text-5xl text-romantic-red mb-4"
-                        : "font-serif text-base md:text-lg text-deep-purple/90 leading-relaxed indent-8 first-letter:text-3xl first-letter:font-script first-letter:text-romantic-red first-letter:mr-1"
+                        : "font-serif text-base md:text-lg text-deep-purple/90 leading-relaxed indent-4 first-letter:text-3xl first-letter:font-script first-letter:text-romantic-red first-letter:mr-1"
                     }
                   />
                 )}
@@ -138,24 +138,25 @@ const LoveLetter = ({ onComplete }: LovelLetterProps) => {
             🌹
           </motion.div>
 
-          {/* Continue button */}
-          {allComplete && (
-            <div className="absolute -bottom-36 left-0 right-0 flex justify-center">
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <Button
-                  onClick={onComplete}
-                  className="bg-romantic-red hover:bg-romantic-red/90 text-white px-8 py-6 text-lg font-script shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
-                >
-                  Continue ♥
-                </Button>
-              </motion.div>
-            </div>
-          )}
         </div>
+        
+        {/* Continue button */}
+        {allComplete && (
+          <div className="flex justify-center mt-16">
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Button
+                onClick={onComplete}
+                className="bg-romantic-red hover:bg-romantic-red/90 text-white px-8 py-6 text-lg font-script shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+              >
+                Continue ♥
+              </Button>
+            </motion.div>
+          </div>
+        )}
       </motion.div>
     </motion.div>
   );

@@ -115,7 +115,7 @@ const MessageBottle = () => {
         </svg>
       </motion.button>
 
-      <p className="mt-3 text-center text-sm text-muted-foreground font-script">
+      <p className="mt-3 text-center text-sm text-soft-pink font-script">
         Message in a Bottle
       </p>
 

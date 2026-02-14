@@ -30,7 +30,7 @@ const PaperPlane = ({ onComplete }: PaperPlaneProps) => {
       onMouseMove={handleMouseMove}
     >
       {/* Custom Cursor */}
-      {showCursor && (
+      {/* {showCursor && (
         <motion.div
           className="fixed pointer-events-none z-50 text-accent font-script text-lg whitespace-nowrap"
           style={{
@@ -43,7 +43,7 @@ const PaperPlane = ({ onComplete }: PaperPlaneProps) => {
         >
           Click Me ✨
         </motion.div>
-      )}
+      )} */}
 
       {/* Sparkle Trail */}
       {isFlying && (
@@ -112,7 +112,7 @@ const PaperPlane = ({ onComplete }: PaperPlaneProps) => {
           <motion.path
             d="M10 50 L90 20 L60 80 L50 55 L10 50Z"
             fill="hsl(var(--champagne))"
-            stroke="hsl(var(--accent))"
+            stroke="hsl(var(--soft-pink))"
             strokeWidth="2"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
@@ -132,8 +132,8 @@ const PaperPlane = ({ onComplete }: PaperPlaneProps) => {
           />
           {/* Heart on plane */}
           <motion.text
-            x="45"
-            y="45"
+            x="55"
+            y="50"
             fontSize="16"
             fill="hsl(var(--romantic-red))"
             animate={{ scale: [1, 1.2, 1] }}
@@ -153,7 +153,7 @@ const PaperPlane = ({ onComplete }: PaperPlaneProps) => {
       {/* Instructions */}
       {!isFlying && (
         <motion.p
-          className="absolute bottom-1/4 text-center text-muted-foreground font-serif text-lg"
+          className="absolute bottom-1/4 text-center text-soft-pink font-serif text-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1 }}
